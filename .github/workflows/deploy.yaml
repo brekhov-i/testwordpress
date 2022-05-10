@@ -13,6 +13,6 @@ jobs:
       # Setup key
       - run: set -eu
       - run: mkdir "$HOME/.ssh"
-      - run: echo "$" > "$HOME/.ssh/key"
-      - run: chmod 600 "$HOME/.ssh/key"
-      - run: rsync -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . u1675238.cp.regruhosting.ru:/var/www/u1675238/public_html/ilyabrekhov.ru
+      - run: echo "$" > "$HOME/.ssh/HOSTKEY"
+      - run: chmod 600 "$HOME/.ssh/HOSTKEY"
+      - run: rsync -e "ssh -p 22 -i $HOME/.ssh/HOSTKEY -o StrictHostKeyChecking=no" --archive --compress --delete . u1675238.cp.regruhosting.ru:/var/www/u1675238/public_html/ilyabrekhov.ru
