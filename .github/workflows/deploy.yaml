@@ -15,5 +15,8 @@ jobs:
       - run: mkdir "$HOME/.ssh"
       - run: echo "$" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
+      # Build
+      - run: npm ci
+      - run: npm run build
       # Deploy
-      - run: rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . brekhojb@stone.beget.com:/home/b/brekhojb/ilyabrehov.ru/public_html
+      - run: cd app && rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . u1675238.cp.regruhosting.ru:/var/www/u1675238/ilyabrekhov.ru
